@@ -67,19 +67,27 @@ int main(int argc, char** argv) {
         epsLDouble *= 0.5;
     }
     if((epsLDouble == LDBL_EPSILON) && (1.0+epsLDouble>1.0)) {
-        printf("LONG DOUBLE epsilon obliczony = %.10e epsilon z float.h = %.10e \n", epsLDouble, LDBL_EPSILON);
+        printf("LONG DOUBLE epsilon obliczony = %.Le epsilon z float.h = %.Le \n", epsLDouble, LDBL_EPSILON);
     }
     while ((long double) (minLDouble / 2.0) != 0) {
         minLDouble *= 0.5;
     }
     if(minLDouble > 0.0) {
-        printf("min obliczony = %e min z float.h = %e \n", minLDouble, LDBL_MIN);
+        printf("min obliczony = %Le min z float.h = %Le \n", minLDouble, LDBL_MIN);
     }
-    while ((long double) isinf(maxLDouble*(1.0+1.00001)) == 0) {
+    while ((long double) isinf(maxLDouble*(1.5)) == 0) {
+        bmaxLDouble = maxLDouble;
+        maxLDouble *= (1.5);
+    }
+    while ((long double) isinf(maxLDouble*(1.00001)) == 0) {
         bmaxLDouble = maxLDouble;
         maxLDouble *= (1.00001);
     }
-    printf("max obliczony = %e max z float.h %e \n", maxLDouble, LDBL_MAX);
+    while ((long double) isinf(maxLDouble*(1.0000001)) == 0) {
+        bmaxLDouble = maxLDouble;
+        maxLDouble *= (1.0000001);
+    }
+    printf("max obliczony = %Le max z float.h %Le \n", maxLDouble, LDBL_MAX);
     
     return (EXIT_SUCCESS);
 }
