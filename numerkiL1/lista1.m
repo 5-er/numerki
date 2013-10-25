@@ -16,3 +16,7 @@ disp(x)
 endif
 disp('min octave')
 disp(realmin)
+
+x = 3*(4/3-1)-1;
+disp('eps kahan')
+disp(x)
