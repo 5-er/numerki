@@ -1,6 +1,6 @@
 /* 
  * File:   main.c
- * Author: krystian
+ * Author: Krystian Adamczak
  *
  * Created on 21 październik 2013, 14:03
  */

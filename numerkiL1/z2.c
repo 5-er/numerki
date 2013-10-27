@@ -1,6 +1,6 @@
 /* 
  * File:   z2.c
- * Author: krystian
+ * Author: Krystian Adamczak
  *
  * Created on 25 październik 2013, 17:08
  */
